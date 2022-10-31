@@ -173,7 +173,6 @@ platform :ios do
 
   desc 'Build and upload Production app to App Store'
   lane :build_and_upload_appstore_app do
-    xcversion(version: "13.4.1")
     set_app_version
     set_connect_api_key if is_ci
     if (Environments.BUMP_APP_STORE_BUILD_NUMBER || '') == 'true'
