@@ -73,3 +73,16 @@ jobs:
       run: bundle exec fastlane build_and_upload_appstore_app
       env:
         APPSTORE_CONNECT_API_KEY: ${{ secrets.APPSTORE_CONNECT_API_KEY }}
+
+    - name: Get Build Number
+      run: fastlane run get_build_number
+
+    - name: Create Release and Upload Artifacts
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          ${{ env.IPA_OUTPUT_PATH }}
+          ${{ env.DSYM_OUTPUT_PATH }}
+        tag_name: ${{ format('{0}-{1}', env.BUILD_NUMBER, env.TAG_TYPE) }}
+      env:
+        TAG_TYPE: App Store

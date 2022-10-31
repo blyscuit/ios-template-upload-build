@@ -13,12 +13,12 @@ class DeliverableConstants
 
   # a gsp file name for staging
   def self.GSP_STAGING
-    './{PROJECT_NAME}/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist'
+    './TemplateApp/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist'
   end
 
   # a gsp file name for production
   def self.GSP_PRODUCTION
-    './{PROJECT_NAME}/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist'
+    './TemplateApp/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist'
   end
 
   # The path to the upload-symbols file of the Fabric app
@@ -56,12 +56,12 @@ class DeliverableConstants
 
   # App Store Connect API Key ID
   def self.APP_STORE_KEY_ID
-    '<#API_KEY_ID#>'
+    'TKJCMGPSYH'
   end
 
   # App Store Connect API Issuer ID
   def self.APP_STORE_ISSUER_ID
-    '<#ISSUER_ID#>'
+    '69a6de82-b7cb-47e3-e053-5b8c7c11a4d1'
   end
 
 end
