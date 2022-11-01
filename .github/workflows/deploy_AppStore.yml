@@ -70,12 +70,17 @@ jobs:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASS }}
 
     - name: Build App and Distribute to AppStore
-      run: bundle exec fastlane build_and_upload_appstore_app
+      run: |
+        bundle exec fastlane build_and_upload_appstore_app
+        sh("echo IPA_OUTPUT_PATH=#{env.IPA_OUTPUT_PATH} >> $GITHUB_ENV")
+        sh("echo DSYM_OUTPUT_PATH=#{env.DSYM_OUTPUT_PATH} >> $GITHUB_ENV")
       env:
         APPSTORE_CONNECT_API_KEY: ${{ secrets.APPSTORE_CONNECT_API_KEY }}
 
     - name: Get Build Number
-      run: fastlane run get_build_number
+      run: |
+        fastlane run get_build_number
+        sh("echo BUILD_NUMBER=#{env.BUILD_NUMBER} >> $GITHUB_ENV")
 
     - name: Create Release and Upload Artifacts
       uses: softprops/action-gh-release@v1
