@@ -27,4 +27,8 @@ class Environments
   def self.BUMP_APP_STORE_BUILD_NUMBER
     ENV['BUMP_APP_STORE_BUILD_NUMBER']
   end
+
+  def self.GITHUB_ACTIONS
+    ENV['GITHUB_ACTIONS']
+  end
 end

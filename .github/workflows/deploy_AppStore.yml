@@ -82,4 +82,4 @@ jobs:
           ${{ env.DSYM_OUTPUT_PATH }}
         tag_name: ${{ format('{0}-{1}', env.BUILD_NUMBER, env.TAG_TYPE) }}
       env:
-        TAG_TYPE: App Store
+        TAG_TYPE: AppStore
