@@ -79,6 +79,6 @@ jobs:
         files: |
           ${{ env.IPA_OUTPUT_PATH }}
           ${{ env.DSYM_OUTPUT_PATH }}
-        tag_name: ${{ format('{0}-{1}', env.BUILD_NUMBER, env.TAG_TYPE) }}
+        tag_name: ${{ format('v{0}({1})-{2}', env.VERSION_NUMBER, env.BUILD_NUMBER, env.TAG_TYPE) }}
       env:
         TAG_TYPE: Production_Firebase

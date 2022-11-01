@@ -126,6 +126,7 @@ platform :ios do
       gsp_name: DeliverableConstants.GSP_STAGING
     )
     environment_manager.save_build_context_to_ci()
+    environment_manager.save_version_number_to_ci(version_number: versioning_manager.version_number)
   end
 
   desc 'Build and upload Production app to Firebase'
@@ -147,6 +148,7 @@ platform :ios do
       gsp_name: DeliverableConstants.GSP_PRODUCTION
     )
     environment_manager.save_build_context_to_ci()
+    environment_manager.save_version_number_to_ci(version_number: versioning_manager.version_number)
   end
 
   desc 'upload develop build to Firebase app distribution'
@@ -202,6 +204,7 @@ platform :ios do
     #   )
     # end
     environment_manager.save_build_context_to_ci()
+    environment_manager.save_version_number_to_ci(version_number: versioning_manager.version_number)
   end
 
   desc 'upload develop build to App Store'

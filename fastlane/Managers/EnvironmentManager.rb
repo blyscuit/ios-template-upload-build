@@ -17,5 +17,11 @@ class EnvironmentManager
       @fastlane.sh("echo BUILD_NUMBER=#{build_number} >> $GITHUB_ENV")
     end
   end
+
+  def save_version_number_to_ci(version_number:)
+    if @is_github_actions
+      @fastlane.sh("echo VERSION_NUMBER=#{version_number} >> $GITHUB_ENV")
+    end
+  end
 end
   
