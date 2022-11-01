@@ -31,4 +31,8 @@ class Environments
   def self.GITHUB_ACTIONS
     ENV['GITHUB_ACTIONS']
   end
+
+  def self.BITRISE_IO
+    ENV['BITRISE_IO']
+  end
 end

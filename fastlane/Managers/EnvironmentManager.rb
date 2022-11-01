@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class EnvironmentManager
-  def initialize(fastlane:, is_github_actions:)
+  def initialize(fastlane:, is_github_actions:, is_bitrise:, build_path:)
     @fastlane = fastlane
     @is_github_actions = is_github_actions
+    @is_bitrise = is_bitrise
+    @build_path = build_path
   end
 
   def save_build_context_to_ci()
@@ -15,6 +17,9 @@ class EnvironmentManager
       @fastlane.sh("echo IPA_OUTPUT_PATH=#{ipa_path} >> $GITHUB_ENV")
       @fastlane.sh("echo DSYM_OUTPUT_PATH=#{dsym_path} >> $GITHUB_ENV")
       @fastlane.sh("echo BUILD_NUMBER=#{build_number} >> $GITHUB_ENV")
+    end
+    if @is_bitrise
+      @fastlane.sh("echo #{@build_path} | envman add --key BUILD_PATH")
     end
   end
 

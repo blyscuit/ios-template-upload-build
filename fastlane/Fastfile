@@ -41,7 +41,9 @@ match_manager = MatchManager.new(
 
 environment_manager = EnvironmentManager.new(
   fastlane: self,
-  is_github_actions: Environments.GITHUB_ACTIONS
+  is_github_actions: Environments.GITHUB_ACTIONS,
+  is_bitrise: Environments.BITRISE_IO,
+  build_path: Constants.BUILD_PATH
 )
 
 before_all do
