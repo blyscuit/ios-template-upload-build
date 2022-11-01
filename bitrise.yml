@@ -42,6 +42,9 @@ workflows:
         title: Build and upload Production app to App Store
         inputs:
         - lane: build_and_upload_appstore_app
+    - deploy-to-bitrise-io:
+        inputs:
+        - deploy_path: /Build
     - cache-push@2:
         inputs:
         - cache_paths: |-
@@ -51,10 +54,10 @@ workflows:
     envs:
     - opts:
         is_expand: false
-      BUNDLE_ID: {BUNDLE_ID_PRODUCTION}
+      BUNDLE_ID: co.nimblehq.ios.templates
     - opts:
         is_expand: false
-      BITRISE_SCHEME: {PROJECT_NAME}
+      BITRISE_SCHEME: TemplateApp
   deploy_release_firebase:
     steps:
     - activate-ssh-key@4:
@@ -83,6 +86,9 @@ workflows:
         title: Build and Upload Production App
         inputs:
         - lane: build_and_upload_production_app
+    - deploy-to-bitrise-io:
+        inputs:
+        - deploy_path: /Build
     - cache-push@2:
         inputs:
         - cache_paths: |-
@@ -92,10 +98,10 @@ workflows:
     envs:
     - opts:
         is_expand: false
-      BUNDLE_ID: {BUNDLE_ID_PRODUCTION}
+      BUNDLE_ID: co.nimblehq.ios.templates
     - opts:
         is_expand: false
-      BITRISE_SCHEME: {PROJECT_NAME}
+      BITRISE_SCHEME: TemplateApp
   deploy_staging:
     steps:
     - activate-ssh-key@4:
@@ -124,6 +130,9 @@ workflows:
         title: Build and Upload Staging App
         inputs:
         - lane: build_and_upload_staging_app
+    - deploy-to-bitrise-io:
+        inputs:
+        - deploy_path: /Build
     - cache-push@2:
         inputs:
         - cache_paths: |-
@@ -133,10 +142,10 @@ workflows:
     envs:
     - opts:
         is_expand: false
-      BUNDLE_ID: {BUNDLE_ID_STAGING}
+      BUNDLE_ID: co.nimblehq.ios.templates.staging
     - opts:
         is_expand: false
-      BITRISE_SCHEME: {PROJECT_NAME} Staging
+      BITRISE_SCHEME: TemplateApp Staging
   test:
     steps:
     - activate-ssh-key@4:
@@ -171,15 +180,15 @@ workflows:
     envs:
     - opts:
         is_expand: false
-      BUNDLE_ID: {BUNDLE_ID_STAGING}
+      BUNDLE_ID: co.nimblehq.ios.templates.staging
     - opts:
         is_expand: false
-      BITRISE_SCHEME: {PROJECT_NAME} Staging
+      BITRISE_SCHEME: TemplateApp Staging
 app:
   envs:
   - opts:
       is_expand: false
-    BITRISE_PROJECT_PATH: {PROJECT_NAME}.xcworkspace
+    BITRISE_PROJECT_PATH: TemplateApp.xcworkspace
   - opts:
       is_expand: false
     TEAM_ID: TEAMID
