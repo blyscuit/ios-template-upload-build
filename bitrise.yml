@@ -30,7 +30,7 @@ workflows:
     - git-clone@6.1: {}
     - cache-pull@2: {}
     - cocoapods-install@2: {}
-    - xcode-test@4.0: {}
+    # - xcode-test@4.0: {}
     - fastlane-match@0:
         inputs:
         - type: appstore
