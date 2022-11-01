@@ -1,6 +1,6 @@
 ---
 format_version: '11'
-default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+default_step_lib_source: 'https://github.com/bitrise-io/bitrise-steplib.git'
 project_type: ios
 trigger_map:
 - push_branch: develop
@@ -11,7 +11,7 @@ trigger_map:
   workflow: deploy_app_store
 - push_branch: release
   workflow: deploy_release_firebase
-- push_branch: "*"
+- push_branch: '*'
   workflow: test
 workflows:
   deploy_app_store:
@@ -34,10 +34,10 @@ workflows:
     - fastlane-match@0:
         inputs:
         - type: appstore
-        - team_id: "$TEAM_ID"
-        - decrypt_password: "$MATCH_PASSWORD"
-        - git_url: "$MATCH_REPO_URL"
-        - app_id: "$BUNDLE_ID"
+        - team_id: $TEAM_ID
+        - decrypt_password: $MATCH_PASSWORD
+        - git_url: $MATCH_REPO_URL
+        - app_id: $BUNDLE_ID
     - fastlane@3:
         title: Build and upload Production app to App Store
         inputs:
@@ -45,6 +45,7 @@ workflows:
     - deploy-to-bitrise-io:
         inputs:
         - deploy_path: /Build
+        is_always_run: false
     - cache-push@2:
         inputs:
         - cache_paths: |-
@@ -78,10 +79,10 @@ workflows:
     - fastlane-match@0:
         inputs:
         - type: appstore
-        - team_id: "$TEAM_ID"
-        - app_id: "$BUNDLE_ID"
-        - git_url: "$MATCH_REPO_URL"
-        - decrypt_password: "$MATCH_PASSWORD"
+        - team_id: $TEAM_ID
+        - app_id: $BUNDLE_ID
+        - git_url: $MATCH_REPO_URL
+        - decrypt_password: $MATCH_PASSWORD
     - fastlane@3:
         title: Build and Upload Production App
         inputs:
@@ -89,6 +90,7 @@ workflows:
     - deploy-to-bitrise-io:
         inputs:
         - deploy_path: /Build
+        is_always_run: false
     - cache-push@2:
         inputs:
         - cache_paths: |-
@@ -122,10 +124,10 @@ workflows:
     - fastlane-match@0:
         inputs:
         - type: adhoc
-        - team_id: "$TEAM_ID"
-        - app_id: "$BUNDLE_ID"
-        - git_url: "$MATCH_REPO_URL"
-        - decrypt_password: "$MATCH_PASSWORD"
+        - team_id: $TEAM_ID
+        - app_id: $BUNDLE_ID
+        - git_url: $MATCH_REPO_URL
+        - decrypt_password: $MATCH_PASSWORD
     - fastlane@3:
         title: Build and Upload Staging App
         inputs:
@@ -133,6 +135,7 @@ workflows:
     - deploy-to-bitrise-io:
         inputs:
         - deploy_path: /Build
+        is_always_run: false
     - cache-push@2:
         inputs:
         - cache_paths: |-
@@ -170,7 +173,7 @@ workflows:
         - lane: clean_up_xcov
     - danger@2:
         inputs:
-        - github_api_token: "$DANGER_GITHUB_API_TOKEN"
+        - github_api_token: $DANGER_GITHUB_API_TOKEN
     - cache-push@2:
         inputs:
         - cache_paths: |-
@@ -194,4 +197,4 @@ app:
     TEAM_ID: TEAMID
   - opts:
       is_expand: false
-    MATCH_REPO_URL: https://github.com/nimblehq/fastlane-match.git
+    MATCH_REPO_URL: 'https://github.com/nimblehq/fastlane-match.git'
