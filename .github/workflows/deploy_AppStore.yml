@@ -70,10 +70,7 @@ jobs:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASS }}
 
     - name: Build App and Distribute to AppStore
-      run: |
-        bundle exec fastlane build_and_upload_appstore_app
-        bundle exec fastlane save_build_path
-        bundle exec fastlane save_build_number
+      run: bundle exec fastlane build_and_upload_appstore_app
       env:
         APPSTORE_CONNECT_API_KEY: ${{ secrets.APPSTORE_CONNECT_API_KEY }}
 
