@@ -125,6 +125,7 @@ platform :ios do
       product_name: Constants.PRODUCT_NAME_STAGING,
       gsp_name: DeliverableConstants.GSP_STAGING
     )
+    environment_manager.save_build_context_to_ci()
   end
 
   desc 'Build and upload Production app to Firebase'
@@ -145,6 +146,7 @@ platform :ios do
       product_name: Constants.PRODUCT_NAME_PRODUCTION,
       gsp_name: DeliverableConstants.GSP_PRODUCTION
     )
+    environment_manager.save_build_context_to_ci()
   end
 
   desc 'upload develop build to Firebase app distribution'
