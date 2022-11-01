@@ -31,13 +31,10 @@ workflows:
     - cache-pull@2: {}
     - cocoapods-install@2: {}
     # - xcode-test@4.0: {}
-    - fastlane-match@0:
+    - fastlane@3:
+        title: Match Production App Store
         inputs:
-        - type: appstore
-        - team_id: $TEAM_ID
-        - decrypt_password: $MATCH_PASSWORD
-        - git_url: $MATCH_REPO_URL
-        - app_id: $BUNDLE_ID
+        - lane: sync_appstore_signing
     - fastlane@3:
         title: Build and upload Production app to App Store
         inputs:
