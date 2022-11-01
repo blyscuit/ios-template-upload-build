@@ -41,7 +41,6 @@ workflows:
         - lane: build_and_upload_appstore_app
     - deploy-to-bitrise-io:
         inputs:
-        - deploy_path: /Build
         is_always_run: false
     - cache-push@2:
         inputs:
@@ -86,7 +85,6 @@ workflows:
         - lane: build_and_upload_production_app
     - deploy-to-bitrise-io:
         inputs:
-        - deploy_path: /Build
         is_always_run: false
     - cache-push@2:
         inputs:
@@ -131,7 +129,6 @@ workflows:
         - lane: build_and_upload_staging_app
     - deploy-to-bitrise-io:
         inputs:
-        - deploy_path: /Build
         is_always_run: false
     - cache-push@2:
         inputs:
