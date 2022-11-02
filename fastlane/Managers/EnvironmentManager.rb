@@ -19,7 +19,7 @@ class EnvironmentManager
       @fastlane.sh("echo BUILD_NUMBER=#{build_number} >> $GITHUB_ENV")
     end
     if @is_bitrise
-      @fastlane.sh("echo -n #{@build_path} | envman add --key BUILD_PATH")
+      @fastlane.sh("envman add --key BUILD_PATH --value '#{@build_path}'")
     end
   end
 
