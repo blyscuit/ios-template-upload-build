@@ -61,8 +61,8 @@ jobs:
       run: bundle exec pod install
       shell: bash
 
-    - name: Build and Test
-      run: bundle exec fastlane build_and_test
+    # - name: Build and Test
+    #   run: bundle exec fastlane build_and_test
 
     - name: Match AppStore
       run: bundle exec fastlane sync_appstore_signing
