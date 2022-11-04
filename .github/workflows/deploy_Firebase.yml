@@ -79,7 +79,7 @@ jobs:
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-    - name: Create Release and Upload Artifacts
+    - name: Upload Artifacts
       uses: softprops/action-gh-release@v1
       with:
         files: |
