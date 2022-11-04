@@ -78,6 +78,8 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: ${{ format('v{0}({1})-{2}', env.VERSION_NUMBER, env.BUILD_NUMBER, env.TAG_TYPE) }}
-        path: ${{ env.BUILD_PATH }}
+        path: |
+          ${{ env.IPA_OUTPUT_PATH }}
+          ${{ env.DSYM_OUTPUT_PATH }}
       env:
         TAG_TYPE: App_Store
