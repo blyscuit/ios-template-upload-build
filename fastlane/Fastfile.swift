@@ -95,7 +95,7 @@ class Fastfile: LaneFile {
         Build.saveBuildContextToCI()
     }
 
-    func buildAndUploadToAppStoreLane() {
+    func buildUploadToAppStoreLane() {
         desc("Build Production app and upload to App Store")
 
         setAppVersion()
