@@ -24,8 +24,8 @@ enum Constant {
 
     // MARK: - Match
 
-    static let userName = "<#userName#>"
-    static let teamId = "<#teamId#>"
+    static let userName = "su.t@nimblehq.co"
+    static let teamId = "4TWS7E2EPE"
     static let keychainName = "github_action_keychain"
     static let matchURL = "git@github.com:nimblehq/match-certificates.git"
 
@@ -58,7 +58,7 @@ enum Constant {
 
     static let uploadSymbolsBinaryPath: String = "./Pods/FirebaseCrashlytics/upload-symbols"
     static let dSYMSuffix: String = ".dSYM.zip"
-    
+
     // MARK: - Build and Version
 
     static let manualVersion: String = ""
@@ -66,7 +66,7 @@ enum Constant {
     // MARK: - Device
 
     static let devices = ["iPhone 12 Pro Max"]
-    
+
     // MARK: - Test
 
     static let testTarget: String = "\(projectName)Tests"
