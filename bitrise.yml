@@ -34,11 +34,11 @@ workflows:
     - fastlane@3:
         title: Match Production App Store
         inputs:
-        - lane: sync_appstore_signing
+        - lane: syncAppStoreCodeSigningLane
     - fastlane@3:
         title: Build and upload Production app to App Store
         inputs:
-        - lane: build_and_upload_appstore_app
+        - lane: buildAndUploadToAppStoreLane
     - deploy-to-bitrise-io:
         inputs:
         - deploy_path: $BUILD_PATH
