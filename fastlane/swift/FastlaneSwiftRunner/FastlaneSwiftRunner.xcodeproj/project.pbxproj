@@ -157,8 +157,6 @@
 		B33BAF4E1F51F8D90001A751 = {
 			isa = PBXGroup;
 			children = (
-				8B92CD0228DC62C100A3FF05 /* Helpers */,
-				8B92CD0528DC637400A3FF05 /* Constants */,
 				B3BA65B01F5A324A00B34850 /* Fastlane Runner */,
 				D556D6A91F6A08F5003108E3 /* FastlaneRunner */,
 			);
@@ -167,6 +165,8 @@
 		B3BA65B01F5A324A00B34850 /* Fastlane Runner */ = {
 			isa = PBXGroup;
 			children = (
+				8B92CD0228DC62C100A3FF05 /* Helpers */,
+				8B92CD0528DC637400A3FF05 /* Constants */,
 				D5A7C48D1F7C4DAF00A91DE6 /* Appfile.swift */,
 				D55B28BC1F6C588300DC42C5 /* Deliverfile.swift */,
 				D5A7C48E1F7C4DAF00A91DE6 /* Fastfile.swift */,

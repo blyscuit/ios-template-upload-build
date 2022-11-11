@@ -64,6 +64,7 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 fastlane/xcov_output
+FastlaneRunner
 
 # Sourcery
 *.generated.swift
