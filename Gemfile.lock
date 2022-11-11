@@ -17,8 +17,8 @@ GEM
     artifactory (3.0.15)
     atomos (0.1.3)
     aws-eventstream (1.2.0)
-    aws-partitions (1.653.0)
-    aws-sdk-core (3.166.0)
+    aws-partitions (1.659.0)
+    aws-sdk-core (3.167.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.5)
@@ -82,7 +82,7 @@ GEM
     concurrent-ruby (1.1.10)
     cork (0.3.0)
       colored2 (~> 3.1)
-    danger (9.0.0)
+    danger (9.1.0)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
@@ -117,9 +117,9 @@ GEM
     dotenv (2.8.1)
     emoji_regex (3.2.3)
     escape (0.0.4)
-    ethon (0.15.0)
+    ethon (0.16.0)
       ffi (>= 1.15.0)
-    excon (0.93.1)
+    excon (0.94.0)
     faraday (1.10.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -198,7 +198,7 @@ GEM
     git (1.12.0)
       addressable (~> 2.8)
       rchardet (~> 1.8)
-    google-apis-androidpublisher_v3 (0.30.0)
+    google-apis-androidpublisher_v3 (0.31.0)
       google-apis-core (>= 0.9.1, < 2.a)
     google-apis-core (0.9.1)
       addressable (~> 2.5, >= 2.5.1)
@@ -221,7 +221,7 @@ GEM
     google-cloud-env (1.6.0)
       faraday (>= 0.17.3, < 3.0)
     google-cloud-errors (1.3.0)
-    google-cloud-storage (1.43.0)
+    google-cloud-storage (1.44.0)
       addressable (~> 2.8)
       digest-crc (~> 0.4)
       google-apis-iamcredentials_v1 (~> 0.1)
@@ -333,7 +333,7 @@ GEM
     xcpretty-travis-formatter (1.0.1)
       xcpretty (~> 0.2, >= 0.0.7)
     xcresult (0.2.1)
-    zeitwerk (2.6.1)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   x86_64-darwin-21
@@ -350,4 +350,4 @@ DEPENDENCIES
   xcov
 
 BUNDLED WITH
-   2.3.22
+   2.3.25

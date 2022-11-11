@@ -65,7 +65,7 @@ jobs:
     #   run: bundle exec fastlane build_and_test
 
     - name: Match AppStore
-      run: bundle exec fastlane syncAppStoreCodeSigningLane
+      run: bundle exec fastlane syncAppStoreCodeSigning2Lane
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASS }}
 

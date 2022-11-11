@@ -44,6 +44,14 @@ class Fastfile: LaneFile {
         )
     }
 
+    func syncAppStoreCodeSigning2Lane() {
+        desc("Sync the App Store match signing for the Production build 2")
+        Match.syncCodeSigning(
+            type: .appStore,
+            appIdentifier: [Constant.productionBundleId]
+        )
+    }
+
     // MARK: - Build
 
     func buildAdHocStagingLane() {

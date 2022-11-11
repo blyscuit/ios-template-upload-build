@@ -14,6 +14,7 @@
 		12D2EB8D2620D83C00844013 /* OptionalConfigValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2EB8C2620D83B00844013 /* OptionalConfigValue.swift */; };
 		1C2D0FA528E4512E0059FF5A /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D0FA428E4512E0059FF5A /* Version.swift */; };
 		1C2D0FA728E457D10059FF5A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D0FA628E457D10059FF5A /* Test.swift */; };
+		797AE689A0810C6F28D4AF40 /* FastlaneRunner in FastlaneRunnerCopySigned */ = {isa = PBXBuildFile; fileRef = D556D6A91F6A08F5003108E3 /* FastlaneRunner */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8B92CD0428DC62D200A3FF05 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92CD0328DC62D200A3FF05 /* Match.swift */; };
 		8B92CD0728DC638800A3FF05 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92CD0628DC638800A3FF05 /* Constant.swift */; };
 		8B92CD0928DC63A700A3FF05 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92CD0828DC63A700A3FF05 /* Secret.swift */; };
@@ -38,7 +39,6 @@
 		B3BA65AC1F5A269100B34850 /* SocketClientDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA65A31F5A269100B34850 /* SocketClientDelegateProtocol.swift */; };
 		B3BA65AD1F5A269100B34850 /* SocketResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA65A41F5A269100B34850 /* SocketResponse.swift */; };
 		B3BA65AF1F5A2D5C00B34850 /* RunnerArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA65AE1F5A2D5C00B34850 /* RunnerArgument.swift */; };
-		C0459CAC27261897002CDFB9 /* FastlaneRunner in CopyFiles */ = {isa = PBXBuildFile; fileRef = D556D6A91F6A08F5003108E3 /* FastlaneRunner */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D55B28C31F6C588300DC42C5 /* Deliverfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B28BC1F6C588300DC42C5 /* Deliverfile.swift */; };
 		D55B28C41F6C588300DC42C5 /* Gymfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B28BD1F6C588300DC42C5 /* Gymfile.swift */; };
 		D55B28C51F6C588300DC42C5 /* Matchfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B28BE1F6C588300DC42C5 /* Matchfile.swift */; };
@@ -54,14 +54,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C0459CAB27261886002CDFB9 /* CopyFiles */ = {
+		C44740BCB0C548970A35B976 /* FastlaneRunnerCopySigned */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = $SRCROOT/../..;
 			dstSubfolderSpec = 0;
 			files = (
-				C0459CAC27261897002CDFB9 /* FastlaneRunner in CopyFiles */,
+				797AE689A0810C6F28D4AF40 /* FastlaneRunner in FastlaneRunnerCopySigned */,
 			);
+			name = FastlaneRunnerCopySigned;
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -156,9 +157,9 @@
 		B33BAF4E1F51F8D90001A751 = {
 			isa = PBXGroup;
 			children = (
-				B3BA65B01F5A324A00B34850 /* Fastlane Runner */,
-				8B92CD0528DC637400A3FF05 /* Constants */,
 				8B92CD0228DC62C100A3FF05 /* Helpers */,
+				8B92CD0528DC637400A3FF05 /* Constants */,
+				B3BA65B01F5A324A00B34850 /* Fastlane Runner */,
 				D556D6A91F6A08F5003108E3 /* FastlaneRunner */,
 			);
 			sourceTree = "<group>";
@@ -247,7 +248,7 @@
 			buildPhases = (
 				B33BAF531F51F8D90001A751 /* Sources */,
 				B33BAF541F51F8D90001A751 /* Frameworks */,
-				C0459CAB27261886002CDFB9 /* CopyFiles */,
+				C44740BCB0C548970A35B976 /* FastlaneRunnerCopySigned */,
 			);
 			buildRules = (
 			);
@@ -464,6 +465,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -476,6 +478,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
