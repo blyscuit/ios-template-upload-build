@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "cocoapods"
-gem "fastlane"
+gem "fastlane", :git => 'git@github.com:blyscuit/fastlane-swift-group.git', :ref => 'a095153'
 gem "xcov"
 gem "danger"
 gem "danger-swiftlint"

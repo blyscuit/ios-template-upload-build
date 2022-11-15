@@ -9,11 +9,14 @@
 enum Build {
 
     static func saveBuildContextToCI() {
+        puts(message: .userDefined("YES >>>>>>>>"))
+
         switch Constant.platform {
         case .gitHubAction:
             let ipaPath = laneContext()["IPA_OUTPUT_PATH"]
             let dsymPath = laneContext()["DSYM_OUTPUT_PATH"]
             let buildNumber = laneContext()["BUILD_NUMBER"]
+
 
             sh(command: "echo IPA_OUTPUT_PATH=\(ipaPath ?? "") >> $GITHUB_ENV")
             sh(command: "echo DSYM_OUTPUT_PATH=\(dsymPath ?? "") >> $GITHUB_ENV")
